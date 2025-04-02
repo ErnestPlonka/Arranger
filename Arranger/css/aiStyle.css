@@ -1,0 +1,64 @@
+
+.ai_output {
+    color: #e5e5e5;
+}
+.ai{
+    width: 85%;
+    margin: 20px 0px 20px 0;
+    height: 50vh;
+    border: 2px solid #09664a;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.ai_output{
+    height: 70%;
+    width: 96%;
+    border: 2px solid #0b835f;
+    background-image: linear-gradient(to bottom right, #161616,#161616,#242424);
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: auto;
+}
+.ai_output::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.ai_output::-webkit-scrollbar-track {
+    /*border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;*/
+    background: transparent;
+}
+  
+.ai_output::-webkit-scrollbar-thumb {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background: #9ce7b6;
+}
+  
+.ai_output::-webkit-scrollbar-thumb:hover {
+background: #5cb67b;
+}
+.ai_prompt{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    align-items: center;
+}
+.ai_prompt input {
+    width: 80%;
+    height: 50%;
+    background-image: linear-gradient(#161616,#182c25);
+    color: #e5e5e5;
+    border-radius: 2px;
+    border: 2px solid #09664a;
+    margin: 0px 20px 0px 0px;
+}
+img{
+    height: 100%;
+    cursor: pointer;
+}
+

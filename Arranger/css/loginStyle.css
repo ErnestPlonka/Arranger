@@ -1,0 +1,65 @@
+.login {
+    
+    background-image: linear-gradient(to bottom right, #161616,#333333);
+    border-radius: 25px;
+    border: 2px solid #306844;
+    padding: 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(var(--font-size) * 1.1);
+}
+#login_username{
+    margin-left: 10px;
+}
+#login_pass{
+    margin-left: 45px;
+}
+.login .username {
+    color: #e5e5e5;
+    margin: 20px 0px 20px 0;
+}
+
+.login .username input {
+    background-image: linear-gradient(#161616,#182c25);
+    color: #e5e5e5;
+    border: 2px solid #306844;
+}
+
+.login #check_login {
+    background-color: #21ce99;
+    color: #0a0a0a;
+    border: none;
+    width: 25%;
+    height: 25px;
+    border-radius: 5px;
+    margin: 20px 0px 20px 0;
+    cursor: pointer;
+}
+
+.login #new_acc {
+    margin: 20px 0px 20px 0;
+    color: #21ce99;
+}
+
+.login #new_acc:hover {
+    color: #16a086;
+}
+
+.create_acc_sign{
+    font-size: calc(var(--font-size) * 2.25);
+}
+
+#menu{
+    display: none;
+    width: 100%;
+    text-align: center;
+    font-size: calc(var(--font-size) * 5);
+}
+#motto{
+    display: none;
+    font-style: italic;
+    font-weight: 200;
+    font-size: calc(var(--font-size) * 2.25);
+}

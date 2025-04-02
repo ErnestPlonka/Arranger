@@ -1,0 +1,43 @@
+.login {
+    background-image: linear-gradient(to bottom right, #161616,#333333);
+    border-radius: 25px;
+    border: 2px solid #306844;
+    padding: 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(var(--font-size) * 1.1);
+}
+
+.login .username {
+    color: #e5e5e5;
+    margin: 20px 0px 20px 0;
+}
+
+.login .username input {
+    background-image: linear-gradient(#161616,#182c25);
+    color: #e5e5e5;
+    border: 2px solid #306844;
+}
+
+.login #new_acc {
+    border: none;
+    width: 25%;
+    height: 25px;
+    border-radius: 5px;
+    margin: 20px 0px 20px 0;
+}
+
+.login #new_acc {
+    margin: 20px 0px 20px 0;
+    color: black;
+    background-color: #21ce99;
+}
+
+.login #new_acc:hover {
+    background-color: #16a086;
+}
+.create_acc_sign{
+    font-size: calc(var(--font-size) * 2.25);
+}

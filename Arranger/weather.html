@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- User Accessibility -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Descriptions -->
+
+    <meta name="description" content="Modern planning is annoying, isn't it? Check Arranger, the new website, that will help you schedule out your day and help with finishing the tasks. What's stopping you from becoming a better self? ">
+    <meta name="keywords" content="Arranger, schedule, calendar, planner, AI, help">
+    <meta name="author" content="MZ-EP">
+    
+    <!-- Title && Photo / Logo -->
+
+    <title>Arranger, Zjeżdżałka, Płonka</title>
+    
+    <link 
+        rel="icon" 
+        type="image/x-icon" 
+        href="images/favicon.ico"
+    >
+
+    <!-- Global CSS -->
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="css/globalStyle.css" 
+    >
+
+    <link 
+        rel="stylesheet" 
+        type="text/css"
+        href="css/weatherStyle.css" 
+    >
+
+    <!-- JS -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Arranger</h1>
+        <h6>The planner you always needed.</h6>
+    </header>
+    <header class="bottom2"></header>
+    <header class="bottom3"></header>
+    <main>
+        <section class="table">
+            <header>
+                <ul>
+                    <li>
+                        <a href="ai.html">AI</a>
+                    </li>
+                    <li>
+                        <a href="weather.html">Weather</a>
+                    </li>
+                    <li>
+                        <a href="bored.html">Bored</a>
+                    </li>
+                </ul>
+            </header>
+        </section>
+        <section class="weather">
+            <section class="weather_output">
+                <div id="windy"></div>
+            </section>
+        </section>
+    </main>
+    <script>
+    function windy(){
+        const options = {
+            key: '123', // REPLACE WITH YOUR KEY !!!
+        
+            // Changing Windy parameters at start-up time
+            // (recommended for faster start-up)
+            lat: 50.4,
+            lon: 14.3,
+            zoom: 5,
+        
+            timestamp: Date.now() + 3 * 24 * 60 * 60 * 1000,
+        
+            hourFormat: '12h',
+        
+            // ...etc
+        };
+        
+        windyInit(options, windyAPI => {
+            const { store } = windyAPI;
+            // All the params are stored in windyAPI.store
+        
+            const levels = store.getAllowed('availLevels');
+            // levels = ['surface', '850h', ... ]
+            // Getting all available values for given key
+        
+            let i = 0;
+            setInterval(() => {
+                i = i === levels.length - 1 ? 0 : i + 1;
+        
+                // Changing Windy params at runtime
+                store.set('level', levels[i]);
+            }, 500);
+        
+            // Observing change of .store value
+            store.on('level', level => {
+                console.log(`Level was changed: ${level}`);
+            });
+        });
+    }
+    windy();
+    </script>
+</body>
+</html>

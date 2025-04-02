@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- User Accessibility -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Descriptions -->
+
+    <meta name="description" content="Modern planning is annoying, isn't it? Check Arranger, the new website, that will help you schedule out your day and help with finishing the tasks. What's stopping you from becoming a better self? ">
+    <meta name="keywords" content="Arranger, schedule, calendar, planner, AI, help">
+    <meta name="author" content="MZ-EP">
+    
+    <!-- Title && Photo / Logo -->
+
+    <title>Arranger, Zjeżdżałka, Płonka</title>
+    
+    <link 
+        rel="icon" 
+        type="image/x-icon" 
+        href="images/favicon.ico"
+    >
+
+    <!-- Global CSS -->
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="css/globalStyle.css" 
+    >
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="css/boredStyle.css" 
+    >
+
+    <!-- JS -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+</head>
+<body>
+    
+    <header>
+        <h1>Arranger</h1>
+        <h6>The planner you always needed.</h6>
+    </header>
+    <header class="bottom2"></header>
+    <header class="bottom3"></header>
+    <main>
+        <main>
+        <section class="table">
+            <header>
+                <ul>
+                    <li>
+                        <a href="ai.html">AI</a>
+                    </li>
+                    <li>
+                        <a href="weather.html">Weather</a>
+                    </li>
+                    <li>
+                        <a href="bored.html">Bored</a>
+                    </li>
+                </ul>
+            </header>
+        </section>
+        <section class="bored_output"></section>
+        <section class="bored">
+            <section class="bored_prompt">
+                <div class="question">
+                    <h3>Price:</h3>
+                    <div class="value">
+                        <input type="radio" id="price_none" name="price" value="none" checked>
+                        <label for="price_none">None</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_0" name="price" value="0">
+                        <label for="price_0">0</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_1" name="price" value="1">
+                        <label for="price_1">1</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_2" name="price" value="2">
+                        <label for="price_2">2</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_3" name="price" value="3">
+                        <label for="price_3">3</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_4" name="price" value="4">
+                        <label for="price_4">4</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_5" name="price" value="5">
+                        <label for="price_5">5</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_6" name="price" value="6">
+                        <label for="price_6">6</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_7" name="price" value="7">
+                        <label for="price_7">7</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_8" name="price" value="8">
+                        <label for="price_8">8</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_9" name="price" value="9">
+                        <label for="price_9">9</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="price_10" name="price" value="10">
+                        <label for="price_10">10</label><br>
+                    </div>
+                </div>
+                <br>
+                <div class="question">
+                    <h3>Participants:</h3>
+                    <div class="value">
+                        <input type="radio" id="participants_none" name="participants" value="none" checked>
+                        <label for="participants_none">Doesn't matter</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="participants_1" name="participants" value="1">
+                        <label for="participants_1">1</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="participants_2" name="participants" value="2">
+                        <label for="participants_2">2</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="participants_3" name="participants" value="3">
+                        <label for="participants_3">3</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="participants_4" name="participants" value="4">
+                        <label for="participants_4">4</label><br>
+                    </div>
+                </div>
+                <br>
+                <div class="question">
+                    <h3>Type:</h3>
+                    <div class="value">
+                        <input type="radio" id="type_all" name="type" value="all" checked>
+                        <label for="type_all">All</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_recreational" name="type" value="recreational">
+                        <label for="type_recreational">Recreational</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_education" name="type" value="education">
+                        <label for="type_education">Education</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_social" name="type" value="social">
+                        <label for="type_social">Social</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_diy" name="type" value="diy">
+                        <label for="type_diy">DIY</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_charity" name="type" value="charity">
+                        <label for="type_charity">Charity</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_cooking" name="type" value="cooking">
+                        <label for="type_cooking">Cooking</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_relaxation" name="type" value="relaxation">
+                        <label for="type_relaxation">Relaxation</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_music" name="type" value="music">
+                        <label for="type_music">Music</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="type_busywork" name="type" value="busywork">
+                        <label for="type_busywork">Busywork</label><br>
+                    </div>
+                </div>
+                <br>
+                <div class="question">
+                    <h3>Difficulty:</h3>
+                    <div class="value">
+                        <input type="radio" id="difficulty_none" name="difficulty" value="none" checked>
+                        <label for="difficulty_none">Difficulty doesn't matter</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_0" name="difficulty" value="0">
+                        <label for="difficulty_0">0</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_1" name="difficulty" value="1">
+                        <label for="difficulty_1">1</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_2" name="difficulty" value="2">
+                        <label for="difficulty_2">2</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_3" name="difficulty" value="3">
+                        <label for="difficulty_3">3</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_4" name="difficulty" value="4">
+                        <label for="difficulty_4">4</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_5" name="difficulty" value="5">
+                        <label for="difficulty_5">5</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_6" name="difficulty" value="6">
+                        <label for="difficulty_6">6</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_7" name="difficulty" value="7">
+                        <label for="difficulty_7">7</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_8" name="difficulty" value="8">
+                        <label for="difficulty_8">8</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_9" name="difficulty" value="9">
+                        <label for="difficulty_9">9</label><br>
+                    </div>
+                    <div class="value">
+                        <input type="radio" id="difficulty_10" name="difficulty" value="10">
+                        <label for="difficulty_10">10</label><br>
+                    </div>
+                </div>
+                <input type="button" value="Find" id="send">
+            </section>
+        </section>
+        </main>
+    </main>
+    <script>
+        send.addEventListener("click", async function(){
+            let price = document.querySelector('input[name="price"]:checked').value;
+            let participants = document.querySelector('input[name="participants"]:checked').value;
+            let type = document.querySelector('input[name="type"]:checked').value;
+            let difficulty = document.querySelector('input[name="difficulty"]:checked').value;
+            console.log(price, participants, type, difficulty);
+
+            var url = "http://www.boredapi.com/api/activity/";
+            if(price != "none" || participants != "none" || type != "all" || difficulty != "none"){
+                url += "?";
+                if(price != "none"){
+                    url += "price=" + price/10 + "&";
+                }
+                if(participants != "none"){
+                    url += "participants=" + participants + "&";
+                }
+                if(type != "all"){
+                    url += "type=" + type + "&";
+                }
+                if(difficulty != "none"){
+                    url += "accessibility=0." + difficulty + "&";
+                }
+                url = url.slice(0,-1);
+            }
+            const requestOptions = {
+                method: "GET",
+                redirect: "follow"
+            };
+            try{
+                console.log(url);
+                const info = await(await fetch(url, requestOptions)).json();
+                if(info["activity"] == undefined){
+                    document.querySelector(".bored_output").innerText = "No activity found.";
+                    return;
+                }
+                else{
+                    document.querySelector(".bored_output").innerText = info["activity"];
+                
+                }
+                console.log(info);
+            }
+            catch(error){
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>

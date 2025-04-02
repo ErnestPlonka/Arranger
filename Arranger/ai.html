@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- User Accessibility -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Descriptions -->
+
+    <meta name="description" content="Modern planning is annoying, isn't it? Check Arranger, the new website, that will help you schedule out your day and help with finishing the tasks. What's stopping you from becoming a better self? ">
+    <meta name="keywords" content="Arranger, schedule, calendar, planner, AI, help">
+    <meta name="author" content="MZ-EP">
+    
+    <!-- Title && Photo / Logo -->
+
+    <title>Arranger, Zjeżdżałka, Płonka</title>
+    
+    <link 
+        rel="icon" 
+        type="image/x-icon" 
+        href="images/favicon.ico"
+    >
+
+    <!-- Global CSS -->
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="css/globalStyle.css" 
+    >
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="css/aiStyle.css" 
+    >
+
+    <!-- JS -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Arranger</h1>
+        <h6>The planner you always needed.</h6>
+    </header>
+    <header class="bottom2"></header>
+    <header class="bottom3"></header>
+    <main>
+        <section class="table">
+            <header>
+                <ul>
+                    <li>
+                        <a href="ai.html">AI</a>
+                    </li>
+                    <li>
+                        <a href="weather.html">Weather</a>
+                    </li>
+                    <li>
+                        <a href="bored.html">Bored</a>
+                    </li>
+                </ul>
+            </header>
+        </section>
+        
+        <section class="ai">
+            <section class="ai_output">Hello, world! (Enter your prompt below)</section>
+            <section class="ai_prompt">
+                <input type="text" id="ai_prompt_value" placeholder="Write your prompt here.">
+                <img src="asd.png" alt="send" id="send">
+            </section>
+        </section>
+
+        <script type="module" src="js/ai.js">
+
+        </script>
+    </main>
+</body>
+</html>
